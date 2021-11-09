@@ -3,10 +3,7 @@
 (function() {
     'use strict';
  
-var ceilings = ""
- 
-// Some important shit for this whole thing to work
- 
+var ceilings = "" 
 var func = {
     webpack_inject: (w, e, get) => {
         ceilings = get("03f4982a")
@@ -21,15 +18,14 @@ if(typeof window.webpackJsonp === 'function') {
         func,
         [["webpack_inject"]]
     ]);
-}
- 
-// do the magic
- 
+} 
 Object.keys(ceilings).forEach(function(key) {
-    if(ceilings[key].type === "building") {
+    if(ceilings[key].ceiling) {
+
+      if(ceilings[key].ceiling.imgs) { 
         for(var ceilImg in ceilings[key].ceiling.imgs) {
             ceilings[key].ceiling.imgs[ceilImg].sprite = ""
-        }
+      });
     }
-})
-})();
+  }
+});
