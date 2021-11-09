@@ -21,9 +21,10 @@ if(typeof window.webpackJsonp === 'function') {
 } 
 Object.keys(ceilings).forEach(function(key) {
     if(ceilings[key].ceiling) {
+    if(ceilings[key].type == "container_05" ) return
 
       if(ceilings[key].ceiling.imgs) { 
-        for(var ceilImg in ceilings[key].ceiling.imgs) {
+        Object.keys(ceilings[key].ceiling.imgs).forEach(function(ceilImg) {
             ceilings[key].ceiling.imgs[ceilImg].sprite = ""
       });
     }
