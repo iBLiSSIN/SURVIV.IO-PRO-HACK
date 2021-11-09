@@ -2,6 +2,7 @@
 Object.keys(get("03f4982a")).forEach(function(key) {
 
   if( get("03f4982a")[key].ceiling ) {
+  if( get("03f4982a")[key].type == "container_05" ) {
 
     if( get("03f4982a")[key].ceiling.imgs ) {
       Object.keys(get("03f4982a")[key].ceiling.imgs).forEach( function(item) {
